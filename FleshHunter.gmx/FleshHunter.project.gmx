@@ -30,6 +30,7 @@
   <scripts name="scripts">
     <script>scripts\orbit.gml</script>
     <script>scripts\resetLevel.gml</script>
+    <script>scripts\textPopup.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>
@@ -43,9 +44,11 @@
     <object>objects\obj_PlayerWeapon</object>
     <object>objects\obj_Bullet</object>
     <object>objects\obj_EnemyJump</object>
+    <object>objects\obj_EnemyFly</object>
     <object>objects\obj_EnemyController</object>
     <object>objects\obj_Door</object>
     <object>objects\obj_LevelComplete</object>
+    <object>objects\obj_SmallTextPopup</object>
     <object>objects\obj_FleshPickup</object>
   </objects>
   <rooms name="rooms">

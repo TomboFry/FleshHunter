@@ -160,6 +160,7 @@ obj_PlayerWeapon.image_yscale = global.facing;
             <kind>1</kind>
             <string>with(other) { instance_destroy(); }
 global.totalFlesh++;
+textPopup(x,y-20,"+1");
 </string>
           </argument>
         </arguments>

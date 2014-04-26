@@ -58,7 +58,7 @@ alarm[0] = 120 - (global.level * 2);
     a.text = "Level Complete!";
 } else if(enemies &lt; enemiesMax){
     enemies++;
-    instance_create(16+random(room_width-32),0,obj_EnemyJump);
+    instance_create(16+random(room_width-32),0,choose(obj_EnemyJump,obj_EnemyFly));
 }
 alarm[0] = 120 - (global.level * 2);
 </string>
