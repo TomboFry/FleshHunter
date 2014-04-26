@@ -34,6 +34,8 @@ fadeCol = c_black;
 fadeStep = -1;
 
 window_set_cursor(cr_none);
+
+display_set_gui_size(212,106);
 </string>
           </argument>
         </arguments>

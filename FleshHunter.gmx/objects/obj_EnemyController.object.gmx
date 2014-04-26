@@ -52,8 +52,10 @@ alarm[0] = 120 - (global.level * 2);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(enemiesKilled &gt;= enemiesMax){
+            <string>if(enemiesKilled &gt;= enemiesMax &amp;&amp; obj_Door.image_index == 0){
     obj_Door.image_index = 1;
+    a = instance_create(0,0,obj_LevelComplete);
+    a.text = "Level Complete!";
 } else if(enemies &lt; enemiesMax){
     enemies++;
     instance_create(16+random(room_width-32),0,obj_EnemyJump);

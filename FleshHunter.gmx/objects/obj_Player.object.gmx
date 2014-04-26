@@ -28,6 +28,7 @@
             <string>/// Init
 
 global.mspeed = 1.6;
+global.jheight = 4;
 global.facing = 1;
 global.weapon = 0;
 global.hp = 100;
@@ -72,7 +73,12 @@ if(place_free(x,y+1)){
     gravity = 0;
 }
 if(keyboard_check_pressed(ord('W')) &amp;&amp; place_meeting(x,y+1,obj_CollisionParent)){
-    vspeed = -4;
+    vspeed = -global.jheight;
+}
+if(keyboard_check_released(ord('W'))){
+    if(vspeed &lt; 0){
+        vspeed = vspeed / 2;
+    }
 }
 </string>
           </argument>
@@ -130,6 +136,30 @@ obj_PlayerWeapon.x = x;
 obj_PlayerWeapon.y = y-4;
 obj_PlayerWeapon.image_angle = angle;
 obj_PlayerWeapon.image_yscale = global.facing;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_FleshPickup">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with(other) { instance_destroy(); }
+global.totalFlesh++;
 </string>
           </argument>
         </arguments>

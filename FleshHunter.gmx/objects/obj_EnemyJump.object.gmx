@@ -146,7 +146,7 @@ if(hp &lt;= 0){
             <kind>1</kind>
             <string>move_contact_solid(direction,12);
 vspeed = 0;
-if(other.y &gt; y){
+if(other.y &gt; y || other.x &gt; x || other.x &lt; x){
     if(jumping){
         jumping = false;
     }
