@@ -4,23 +4,45 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_PlayerHurt</sound>
+    <sound>sound\snd_Weapon_MachineGun</sound>
+    <sound>sound\snd_Weapon_Pistol</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_Player</sprite>
     <sprite>sprites\spr_Enemy</sprite>
     <sprite>sprites\spr_Collision</sprite>
     <sprite>sprites\spr_Cursor</sprite>
+    <sprite>sprites\spr_Weapons</sprite>
+    <sprite>sprites\spr_Bullet</sprite>
+    <sprite>sprites\spr_Infinite</sprite>
+    <sprite>sprites\spr_HUD_Ammo</sprite>
+    <sprite>sprites\spr_Door</sprite>
+    <sprite>sprites\spr_HUD_Health</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_Tileset</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\orbit.gml</script>
+    <script>scripts\resetLevel.gml</script>
+  </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_HUD</font>
+  </fonts>
   <objects name="objects">
+    <object>objects\obj_Controller</object>
     <object>objects\obj_Player</object>
     <object>objects\obj_CollisionParent</object>
     <object>objects\obj_Collision</object>
-    <object>objects\obj_Controller</object>
     <object>objects\obj_PlayerCamera</object>
+    <object>objects\obj_PlayerWeapon</object>
+    <object>objects\obj_Bullet</object>
+    <object>objects\obj_EnemyJump</object>
+    <object>objects\obj_EnemyController</object>
+    <object>objects\obj_Door</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
