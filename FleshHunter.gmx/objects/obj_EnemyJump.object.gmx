@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-17</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -107,6 +107,7 @@ if(place_free(x,y+1)){
 } else {
     gravity = 0;
 }
+
 if(collision_point(x,y,obj_Player,false,true)){
     if(hitstep == 0){
         obj_PlayerCamera.shake += 1;

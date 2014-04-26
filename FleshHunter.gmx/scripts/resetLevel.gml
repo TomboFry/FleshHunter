@@ -11,5 +11,8 @@ obj_Player.vspeed = 0;
 
 with(obj_LevelComplete) { instance_destroy(); }
 
+
 a = instance_create(0,0,obj_LevelComplete);
 a.text = "Level " + string(global.level+1);
+
+room_goto(rm_Shop);

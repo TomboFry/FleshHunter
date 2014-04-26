@@ -35,7 +35,7 @@ fadeStep = -1;
 
 window_set_cursor(cr_none);
 
-display_set_gui_size(212,106);
+display_set_gui_size(160,90);
 </string>
           </argument>
         </arguments>
@@ -190,28 +190,39 @@ draw_text(view_xview[0]+2,view_yview[0],global.weapons[global.weapon,0] + "#LEVE
             <string>/// Draw Ammunition &amp; Health
 
 // Ammo
-draw_sprite(spr_HUD_Ammo,0,view_xview[0] + view_wview[0] - 64,view_yview[0]+2);
+draw_sprite(spr_HUD_Ammo,0,view_xview[0] + view_wview[0] - 48,view_yview[0]+2);
 if(global.weapons[global.weapon,4] != -1){
     draw_set_color(c_black);
     draw_set_alpha(0.5);
-    draw_text(view_xview[0]+view_wview[0]-54,view_yview[0]+1,global.weapons[global.weapon,4]);
+    draw_text(view_xview[0]+view_wview[0]-38,view_yview[0]+1,global.weapons[global.weapon,4]);
     
     draw_set_color(c_white);
     draw_set_alpha(1);
-    draw_text(view_xview[0]+view_wview[0]-54,view_yview[0],global.weapons[global.weapon,4]);
+    draw_text(view_xview[0]+view_wview[0]-38,view_yview[0],global.weapons[global.weapon,4]);
 } else {
-    draw_sprite(spr_Infinite,0,view_xview[0]+view_wview[0]-54,view_yview[0]+3);
+    draw_sprite(spr_Infinite,0,view_xview[0]+view_wview[0]-38,view_yview[0]+3);
 }
 
 // Health
-draw_sprite(spr_HUD_Health,0,view_xview[0] + view_wview[0] - 32,view_yview[0]+2);
+draw_sprite(spr_HUD_Health,0,view_xview[0] + view_wview[0] - 24,view_yview[0]+2);
 draw_set_color(c_black);
 draw_set_alpha(0.5);
-draw_text(view_xview[0]+view_wview[0]-22,view_yview[0]+1,global.hp);
+draw_text(view_xview[0]+view_wview[0]-14,view_yview[0]+1,global.hp);
 
 draw_set_color(make_color_rgb(255,global.hp+155,global.hp+155));
 draw_set_alpha(1);
-draw_text(view_xview[0]+view_wview[0]-22,view_yview[0],global.hp);
+draw_text(view_xview[0]+view_wview[0]-14,view_yview[0],global.hp);
+
+
+// Flesh
+draw_sprite(spr_HUD_Flesh,0,view_xview[0] + view_wview[0] - 72,view_yview[0]+2);
+draw_set_color(c_black);
+draw_set_alpha(0.5);
+draw_text(view_xview[0]+view_wview[0]-62,view_yview[0]+1,global.totalFlesh);
+
+draw_set_color(c_white);
+draw_set_alpha(1);
+draw_text(view_xview[0]+view_wview[0]-62,view_yview[0],global.totalFlesh);
 </string>
           </argument>
         </arguments>

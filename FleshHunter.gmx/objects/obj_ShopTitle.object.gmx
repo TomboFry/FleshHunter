@@ -25,17 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>enemies = 0;
-enemiesMax = 5 + (global.level*3);
-enemiesKilled = 0;
+            <string>step = 0;
+yPos = 192;
+wait = 0;
+text = "Shop";
 
-alarm[0] = 120 - (global.level * 8);
+sinval = 0;
+sinout = 0;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -52,19 +54,58 @@ alarm[0] = 120 - (global.level * 8);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(enemiesKilled &gt;= enemiesMax &amp;&amp; obj_Door.image_index == 0){
-    obj_Door.image_index = 1;
-    a = instance_create(0,0,obj_LevelComplete);
-    a.text = "Level Complete!";
-} else if(enemies &lt; enemiesMax){
-    enemies++;
-    instance_create(16+random(room_width-32),0,choose(obj_EnemyJump,obj_EnemyFly));
+            <string>if(step == 0){
+    if(yPos &gt; 1){
+        yPos = yPos / 1.1;
+    } else {
+        yPos = 1;
+        step = 1;
+    }
 }
-if(global.level &lt; 12){
-    alarm[0] = 120 - (global.level * 8);
+if(keyboard_check_pressed(vk_enter)){
+    room_goto(rm_Level1);
+}
+
+if(sinval &lt; 360){
+    sinval += 2;
 } else {
-    alarm[0] = 32;
+    sinval = 0;
 }
+sinout = sin(degtorad(sinval));
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_halign(fa_center);
+
+//shadow
+draw_set_alpha(0.5*((192-yPos)/192));
+draw_set_color(c_black);
+draw_text_transformed(room_width/2,yPos+4,text,4,4,(yPos/2)-0.5+(sinout*3));
+
+draw_set_alpha(((192-yPos)/192));
+draw_set_color(c_white);
+draw_text_transformed(room_width/2,yPos+2,text,4,4,(yPos/2)-0.5+(sinout*3));
+
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>

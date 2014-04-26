@@ -20,6 +20,7 @@
     <sprite>sprites\spr_HUD_Ammo</sprite>
     <sprite>sprites\spr_Door</sprite>
     <sprite>sprites\spr_HUD_Health</sprite>
+    <sprite>sprites\spr_HUD_Flesh</sprite>
     <sprite>sprites\spr_FleshPickup</sprite>
   </sprites>
   <backgrounds name="background">
@@ -37,22 +38,27 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_Controller</object>
-    <object>objects\obj_Player</object>
-    <object>objects\obj_CollisionParent</object>
-    <object>objects\obj_Collision</object>
-    <object>objects\obj_PlayerCamera</object>
-    <object>objects\obj_PlayerWeapon</object>
-    <object>objects\obj_Bullet</object>
-    <object>objects\obj_EnemyJump</object>
-    <object>objects\obj_EnemyFly</object>
-    <object>objects\obj_EnemyController</object>
-    <object>objects\obj_Door</object>
-    <object>objects\obj_LevelComplete</object>
-    <object>objects\obj_SmallTextPopup</object>
-    <object>objects\obj_FleshPickup</object>
+    <objects name="Gameplay">
+      <object>objects\obj_Player</object>
+      <object>objects\obj_CollisionParent</object>
+      <object>objects\obj_Collision</object>
+      <object>objects\obj_PlayerCamera</object>
+      <object>objects\obj_PlayerWeapon</object>
+      <object>objects\obj_Bullet</object>
+      <object>objects\obj_EnemyJump</object>
+      <object>objects\obj_EnemyFly</object>
+      <object>objects\obj_EnemyController</object>
+      <object>objects\obj_Door</object>
+      <object>objects\obj_LevelComplete</object>
+      <object>objects\obj_SmallTextPopup</object>
+      <object>objects\obj_FleshPickup</object>
+    </objects>
+    <objects name="Shop">
+      <object>objects\obj_ShopTitle</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\rm_Level1</room>
     <room>rooms\rm_Shop</room>
   </rooms>
   <help>
