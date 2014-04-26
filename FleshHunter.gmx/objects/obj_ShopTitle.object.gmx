@@ -32,6 +32,12 @@ text = "Shop";
 
 sinval = 0;
 sinout = 0;
+
+sinvaly = 180;
+sinouty = 0;
+
+// backCol = make_colour_rgb(217,224,33);
+backCol = c_black;
 </string>
           </argument>
         </arguments>
@@ -61,9 +67,12 @@ sinout = 0;
         yPos = 1;
         step = 1;
     }
-}
-if(keyboard_check_pressed(vk_enter)){
-    room_goto(rm_Level1);
+} else if(step == 2){
+    if(yPos &lt; 192){
+        yPos = yPos * 1.1;
+    } else {
+        room_goto(rm_Level1);
+    }
 }
 
 if(sinval &lt; 360){
@@ -71,7 +80,22 @@ if(sinval &lt; 360){
 } else {
     sinval = 0;
 }
+if(sinvaly &lt; 360){
+    sinvaly += 3;
+} else {
+    sinvaly = 0;
+}
 sinout = sin(degtorad(sinval));
+sinouty = sin(degtorad(sinvaly));
+
+if(mouse_x &gt;= room_width-60 &amp;&amp; mouse_y &gt;= room_height-38 &amp;&amp; mouse_x &lt;= room_width-8 &amp;&amp; mouse_y &lt;= room_height-8){
+    backCol = make_colour_rgb(217,224,33);
+    if(mouse_check_button_released(mb_left)){
+        step = 2;
+    }
+} else {
+    backCol = c_black;
+}
 </string>
           </argument>
         </arguments>
@@ -94,18 +118,44 @@ sinout = sin(degtorad(sinval));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_center);
+            <string>draw_set_font(fnt_HUD);
+draw_set_color(c_white);
+draw_set_alpha(1);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
 
-//shadow
+draw_set_halign(fa_center);
+
+// Title
 draw_set_alpha(0.5*((192-yPos)/192));
 draw_set_color(c_black);
-draw_text_transformed(room_width/2,yPos+4,text,4,4,(yPos/2)-0.5+(sinout*3));
+draw_text_transformed(room_width/2,yPos+3 + (sinouty*4),text,5,5,(yPos/2)-0.5+(sinout*3));
 
 draw_set_alpha(((192-yPos)/192));
 draw_set_color(c_white);
-draw_text_transformed(room_width/2,yPos+2,text,4,4,(yPos/2)-0.5+(sinout*3));
+draw_text_transformed(room_width/2,yPos+1 + (sinouty*4),text,5,5,(yPos/2)-0.5+(sinout*3));
+
+// Flesh Count
+
+draw_text_transformed((room_width/2)+12, 40 + yPos + (sinouty*4), global.totalFlesh, 2, 2, (yPos/2)-0.5+(sinout*3));
+draw_sprite_ext(spr_HUD_Flesh,0,184,40+yPos + (sinouty*4),2,2,(yPos/2)-0.5+(sinout*3),-1,((192-yPos)/192));
+
+// Go button
+draw_set_color(backCol);
+draw_rectangle(room_width-60,room_height-38,room_width-8,room_height-8,false);
+draw_set_color(c_white);
+draw_set_halign(fa_left);
+draw_text_transformed(room_width-46,room_height-33,"Go!",2,2,0);
+
+// Rectangle
+draw_set_alpha(((yPos-1)/192));
+draw_set_color(c_black);
+draw_rectangle(0,0,room_width,room_height,false);
 
 draw_set_alpha(1);
+
+// Draw cursor on top of everything
+draw_sprite_ext(spr_Cursor,0,mouse_x,mouse_y,2,2,0,-1,1);
 </string>
           </argument>
         </arguments>

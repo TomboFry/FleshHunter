@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>image_angle = random(360);
+direction = random_range(45,105);
+vspeed = -random_range(2,3.5);
 </string>
           </argument>
         </arguments>

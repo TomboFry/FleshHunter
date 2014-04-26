@@ -8,10 +8,12 @@
     <sound>sound\snd_PlayerHurt</sound>
     <sound>sound\snd_Weapon_MachineGun</sound>
     <sound>sound\snd_Weapon_Pistol</sound>
+    <sound>sound\snd_Laser</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_Player</sprite>
     <sprite>sprites\spr_Enemy</sprite>
+    <sprite>sprites\spr_EnemyFly</sprite>
     <sprite>sprites\spr_Collision</sprite>
     <sprite>sprites\spr_Cursor</sprite>
     <sprite>sprites\spr_Weapons</sprite>
@@ -22,10 +24,16 @@
     <sprite>sprites\spr_HUD_Health</sprite>
     <sprite>sprites\spr_HUD_Flesh</sprite>
     <sprite>sprites\spr_FleshPickup</sprite>
+    <sprite>sprites\spr_Tick</sprite>
+    <sprite>sprites\spr_Laser</sprite>
+    <sprite>sprites\spr_Grenade</sprite>
+    <sprite>sprites\spr_Explosion</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_Tileset</background>
-    <background>background\bg_BG</background>
+    <background>background\bg_DirtBG</background>
+    <background>background\bg_ShopBG</background>
+    <background>background\bg_ShopBG_Walls</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -52,9 +60,14 @@
       <object>objects\obj_LevelComplete</object>
       <object>objects\obj_SmallTextPopup</object>
       <object>objects\obj_FleshPickup</object>
+      <object>objects\obj_Laser</object>
+      <object>objects\obj_Grenade</object>
+      <object>objects\obj_Explosion</object>
     </objects>
     <objects name="Shop">
       <object>objects\obj_ShopTitle</object>
+      <object>objects\obj_ShopMenuLeft</object>
+      <object>objects\obj_ShopMenuRight</object>
     </objects>
   </objects>
   <rooms name="rooms">

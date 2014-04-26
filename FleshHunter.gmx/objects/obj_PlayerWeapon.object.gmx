@@ -28,6 +28,8 @@
             <string>image_speed = 0;
 
 step = 0;
+
+ammoregen = 0;
 </string>
           </argument>
         </arguments>
@@ -51,10 +53,21 @@ step = 0;
           <argument>
             <kind>1</kind>
             <string>if(mouse_check_button(mb_left)){
-    if(global.weapons[global.weapon,4] &gt; 0 || global.weapons[global.weapon,4] == -1){
-        instance_create(x,y,obj_Bullet);
+    if(global.weapon == 3){
+        if(instance_number(obj_Laser) == 0){
+            instance_create(x,y,obj_Laser);
+        }
+    } else if(global.weapons[global.weapon,4] &gt; 0 || global.weapons[global.weapon,4] == -1){
+        if(global.weapon == 2){
+            instance_create(x,y,obj_Grenade);
+        } else {
+            instance_create(x,y,obj_Bullet);
+        }
         audio_play_sound(global.weapons[global.weapon,3],10,false);
-        alarm[0] = 5*global.weapons[global.weapon,1];
+        alarm[0] = 5*(global.weapons[global.weapon,1]/((global.weapons[global.weapon,7]/2)+1));
+        // 5 times the firerate divided by half the firerate upgrade, plus one
+        // eg. machine gun with no firerate upgrade = 5 * ( 1 / 1 ) = 5
+        // eg. machine gun with full firerate upgrade = 5 * ( 1 / 5 ) = 1
         if(global.weapons[global.weapon,4] != -1){
             global.weapons[global.weapon,4] -= 1;
         }
@@ -88,20 +101,37 @@ if(mouse_check_button_pressed(mb_left)){
 }
 if(mouse_check_button_released(mb_left)){
     step = 0;
+    with(obj_Laser) { instance_destroy(); }
 }
 
 if(mouse_wheel_down()){
-    if(global.weapon &lt; global.maxweapons){
-        global.weapon++;
-    } else {
-        global.weapon = 0;
+    taken = false;
+    while(taken == false){
+        if(global.weapon &lt; global.maxweapons){
+            global.weapon++;
+        } else {
+            global.weapon = 0;
+        }
+        taken = global.weapons[global.weapon,5];
     }
 }
 if(mouse_wheel_up()){
-    if(global.weapon &gt; 0){
-        global.weapon--;
+    taken = false;
+    while(taken == false){
+        if(global.weapon &gt; 0){
+            global.weapon--;
+        } else {
+            global.weapon = global.maxweapons;
+        }
+        taken = global.weapons[global.weapon,5];
+    }
+}
+if(global.weapon == 3 &amp;&amp; global.weapons[global.weapon,4] &lt; 100){
+    if(ammoregen &lt; 20){
+        ammoregen++;
     } else {
-        global.weapon = global.maxweapons;
+        ammoregen = 0;
+        global.weapons[global.weapon,4]++;
     }
 }
 </string>

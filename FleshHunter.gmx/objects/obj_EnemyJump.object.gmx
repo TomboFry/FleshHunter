@@ -36,7 +36,9 @@ jumping = false;
 
 hitstep = 0;
 
-hp = 3;
+hp = 2 + floor(global.level/3);
+
+image_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -59,7 +61,9 @@ hp = 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x,y,obj_FleshPickup);
+            <string>repeat(1+irandom(3)){
+    instance_create(x-4+random(8),y-4+random(8),obj_FleshPickup);
+}
 </string>
           </argument>
         </arguments>
@@ -82,13 +86,17 @@ hp = 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_xscale = dir;
-
-if(jumping){
+            <string>if(jumping){
     x += (dir/2);
+    image_index = 2;
 } else {
     if(wait &gt; 0){
         wait--;
+        if(wait &lt; 10){
+            image_index = 1;
+        } else {
+            image_index = 0;
+        }
     } else {
         wait = 30+irandom(30);
         vspeed = -2.5-random(1);
@@ -108,6 +116,10 @@ if(place_free(x,y+1)){
     gravity = 0;
 }
 
+if(vspeed &gt; 5){
+    vspeed = 5;
+}
+
 if(collision_point(x,y,obj_Player,false,true)){
     if(hitstep == 0){
         obj_PlayerCamera.shake += 1;
@@ -122,6 +134,31 @@ if(collision_point(x,y,obj_Player,false,true)){
 if(hp &lt;= 0){
     instance_destroy();
     obj_EnemyController.enemiesKilled += 1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Explosion">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(other.image_index &gt;= 3 &amp;&amp; other.image_index &lt;= 8){
+    hp--;
 }
 </string>
           </argument>

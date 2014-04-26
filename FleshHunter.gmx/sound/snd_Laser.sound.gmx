@@ -2,7 +2,7 @@
 <sound>
   <kind>0</kind>
   <extension>.wav</extension>
-  <origname>C:\Users\Tom\Documents\GitHub\FleshHunter\FleshHunter.gmx\\sound\audio\snd_Weapon_Pistol.wav</origname>
+  <origname>Laser_Shoot4_.wav</origname>
   <effects>0</effects>
   <volume>
     <volume>0.77</volume>
@@ -21,8 +21,8 @@
     <bitDepth>16</bitDepth>
   </bitDepths>
   <preload>-1</preload>
-  <data>snd_Weapon_Pistol.wav</data>
+  <data>snd_Laser.wav</data>
   <compressed>1</compressed>
   <streamed>0</streamed>
-  <uncompressOnLoad>1</uncompressOnLoad>
+  <uncompressOnLoad>0</uncompressOnLoad>
 </sound>

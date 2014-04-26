@@ -141,6 +141,31 @@ obj_PlayerWeapon.image_yscale = global.facing;
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_Explosion">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(other.image_index &gt;= 3 &amp;&amp; other.image_index &lt;= 8){
+    global.hp-=0.4;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_FleshPickup">
       <action>
         <libid>1</libid>

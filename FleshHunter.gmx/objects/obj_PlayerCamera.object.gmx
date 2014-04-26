@@ -61,7 +61,11 @@ display_set_gui_size(160,90);
             <string>/// Movement
 
 x = (obj_Player.x + mouse_x)/2;
-y = (obj_Player.y + mouse_y)/2;
+y = ((obj_Player.y + mouse_y)/2)-4;
+
+background_x[0] = view_xview[0] / 10;
+background_y[0] = view_yview[0] / 10;
+
 </string>
           </argument>
         </arguments>
@@ -88,7 +92,7 @@ if(shake &gt; 4){
     shake = 4;
 }
 if(shake &gt; 0){
-    shake -= 0.1;
+    shake -= 0.15;
 }
 
 x += random_range(-shake,shake);
@@ -160,11 +164,11 @@ draw_set_halign(fa_left);
 //Draw shadow first
 draw_set_color(c_black);
 draw_set_alpha(0.5);
-draw_text(view_xview[0]+2,view_yview[0]+1,global.weapons[global.weapon,0] + "#LEVEL " + string(global.level+1));
+draw_text(view_xview[0]+2,view_yview[0]+1,global.weapons[global.weapon,0] + "#WAVE " + string(global.level+1));
 
 draw_set_color(c_white);
 draw_set_alpha(1);
-draw_text(view_xview[0]+2,view_yview[0],global.weapons[global.weapon,0] + "#LEVEL " + string(global.level+1));
+draw_text(view_xview[0]+2,view_yview[0],global.weapons[global.weapon,0] + "#WAVE " + string(global.level+1));
 
 
 </string>
@@ -194,11 +198,11 @@ draw_sprite(spr_HUD_Ammo,0,view_xview[0] + view_wview[0] - 48,view_yview[0]+2);
 if(global.weapons[global.weapon,4] != -1){
     draw_set_color(c_black);
     draw_set_alpha(0.5);
-    draw_text(view_xview[0]+view_wview[0]-38,view_yview[0]+1,global.weapons[global.weapon,4]);
+    draw_text(view_xview[0]+view_wview[0]-38,view_yview[0]+1,ceil(global.weapons[global.weapon,4]));
     
     draw_set_color(c_white);
     draw_set_alpha(1);
-    draw_text(view_xview[0]+view_wview[0]-38,view_yview[0],global.weapons[global.weapon,4]);
+    draw_text(view_xview[0]+view_wview[0]-38,view_yview[0],ceil(global.weapons[global.weapon,4]));
 } else {
     draw_sprite(spr_Infinite,0,view_xview[0]+view_wview[0]-38,view_yview[0]+3);
 }
@@ -207,11 +211,11 @@ if(global.weapons[global.weapon,4] != -1){
 draw_sprite(spr_HUD_Health,0,view_xview[0] + view_wview[0] - 24,view_yview[0]+2);
 draw_set_color(c_black);
 draw_set_alpha(0.5);
-draw_text(view_xview[0]+view_wview[0]-14,view_yview[0]+1,global.hp);
+draw_text(view_xview[0]+view_wview[0]-14,view_yview[0]+1,ceil(global.hp));
 
 draw_set_color(make_color_rgb(255,global.hp+155,global.hp+155));
 draw_set_alpha(1);
-draw_text(view_xview[0]+view_wview[0]-14,view_yview[0],global.hp);
+draw_text(view_xview[0]+view_wview[0]-14,view_yview[0],ceil(global.hp));
 
 
 // Flesh
