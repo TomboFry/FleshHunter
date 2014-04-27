@@ -91,7 +91,7 @@ draw_set_alpha(textalpha);
 draw_set_halign(fa_center);
 draw_set_color(c_white);
 draw_set_font(fnt_HUD);
-draw_text(x,y-26,"Press 'W'");
+draw_text(x,y-26,"Press 'S'");
 draw_set_alpha(1);
 </string>
           </argument>

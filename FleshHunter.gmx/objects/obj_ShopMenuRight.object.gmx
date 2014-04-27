@@ -35,6 +35,7 @@ text[2,0] = "Ammo";
 text[2,1] = 0;
 
 select = 0;
+selectprev = 0;
 
 wep = obj_ShopMenuLeft.select;
 
@@ -95,6 +96,10 @@ backCol = make_color_rgb(217,224,33);
     }
     if(mouse_x &gt;= 216 &amp;&amp; mouse_x &lt;= 372 &amp;&amp; mouse_y &gt;= 97 + (i*22) &amp;&amp; mouse_y &lt;= 116 + (i*22)){
         select = i;
+        if(select != selectprev){
+            if global.sfx audio_play_sound(snd_MenuSelect,10,false);
+        }
+        selectprev = select;
         if(mouse_check_button_released(mb_left)){
             if(text[i,1] != -1){
                 if(global.totalFlesh &gt;= text[i,1]){
@@ -102,10 +107,12 @@ backCol = make_color_rgb(217,224,33);
                         if(global.weapons[wep,i+7] &lt; global.weapons[wep,i+11]){
                             global.weapons[wep,i+7]++;
                             global.totalFlesh -= text[i,1];
+                            if global.sfx audio_play_sound(snd_Buy,10,false);
                         }
                     } else {
                         global.weapons[wep,4] += global.weapons[wep,10];
                         global.totalFlesh -= text[i,1];
+                        if global.sfx audio_play_sound(snd_Buy,10,false);
                     }
                 }
             }

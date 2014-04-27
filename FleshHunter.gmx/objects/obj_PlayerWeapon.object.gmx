@@ -52,7 +52,7 @@ ammoregen = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(mouse_check_button(mb_left)){
+            <string>if(mouse_check_button(mb_left) &amp;&amp; !global.dead){
     if(global.weapon == 3){
         if(instance_number(obj_Laser) == 0){
             instance_create(x,y,obj_Laser);
@@ -61,9 +61,9 @@ ammoregen = 0;
         if(global.weapon == 2){
             instance_create(x,y,obj_Grenade);
         } else {
-            instance_create(x,y,obj_Bullet);
+            instance_create(x+lengthdir_x(3,obj_Player.angle),y+lengthdir_y(3,obj_Player.angle),obj_Bullet);
         }
-        audio_play_sound(global.weapons[global.weapon,3],10,false);
+        if global.sfx audio_play_sound(global.weapons[global.weapon,3],10,false);
         alarm[0] = 5*(global.weapons[global.weapon,1]/((global.weapons[global.weapon,7]/2)+1));
         // 5 times the firerate divided by half the firerate upgrade, plus one
         // eg. machine gun with no firerate upgrade = 5 * ( 1 / 1 ) = 5
@@ -95,44 +95,40 @@ ammoregen = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index = global.weapon;
-if(mouse_check_button_pressed(mb_left)){
-    alarm[0] = 1;
-}
-if(mouse_check_button_released(mb_left)){
-    step = 0;
-    with(obj_Laser) { instance_destroy(); }
-}
-
-if(mouse_wheel_down()){
-    taken = false;
-    while(taken == false){
-        if(global.weapon &lt; global.maxweapons){
-            global.weapon++;
-        } else {
-            global.weapon = 0;
+            <string>if(!global.dead){
+    image_index = global.weapon;
+    if(mouse_check_button_pressed(mb_left)){
+        alarm[0] = 1;
+    }
+    if(mouse_check_button_released(mb_left)){
+        step = 0;
+        with(obj_Laser) { instance_destroy(); }
+    }
+    
+    if(mouse_wheel_down()){
+        taken = false;
+        while(taken == false){
+            if(global.weapon &lt; global.maxweapons){
+                global.weapon++;
+            } else {
+                global.weapon = 0;
+            }
+            taken = global.weapons[global.weapon,5];
         }
-        taken = global.weapons[global.weapon,5];
     }
-}
-if(mouse_wheel_up()){
-    taken = false;
-    while(taken == false){
-        if(global.weapon &gt; 0){
-            global.weapon--;
-        } else {
-            global.weapon = global.maxweapons;
+    if(mouse_wheel_up()){
+        taken = false;
+        while(taken == false){
+            if(global.weapon &gt; 0){
+                global.weapon--;
+            } else {
+                global.weapon = global.maxweapons;
+            }
+            taken = global.weapons[global.weapon,5];
         }
-        taken = global.weapons[global.weapon,5];
     }
-}
-if(global.weapon == 3 &amp;&amp; global.weapons[global.weapon,4] &lt; 100){
-    if(ammoregen &lt; 20){
-        ammoregen++;
-    } else {
-        ammoregen = 0;
-        global.weapons[global.weapon,4]++;
-    }
+} else {
+    image_alpha = 0;
 }
 </string>
           </argument>

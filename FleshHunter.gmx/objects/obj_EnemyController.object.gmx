@@ -30,6 +30,41 @@ enemiesMax = 5 + (global.level*3);
 enemiesKilled = 0;
 
 alarm[0] = 120 - (global.level * 8);
+
+alarm[1] = room_speed;
+
+spawnx = 0;
+spawny = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(!global.dead){
+    global.secs++;
+    if(global.secs &gt;= 60){
+        global.secs = 0;
+        global.mins++;
+    }
+    alarm[1] = room_speed;
+}
 </string>
           </argument>
         </arguments>
@@ -55,10 +90,16 @@ alarm[0] = 120 - (global.level * 8);
             <string>if(enemiesKilled &gt;= enemiesMax &amp;&amp; obj_Door.image_index == 0){
     obj_Door.image_index = 1;
     a = instance_create(0,0,obj_LevelComplete);
-    a.text = "Level Complete!";
+    a.text = "Wave Complete!";
+    if global.sfx audio_play_sound(snd_WaveComplete,10,false);
 } else if(enemies &lt; enemiesMax){
     enemies++;
-    instance_create(view_xview[0]+64 + random(view_wview[0]-128), view_yview[0] - random(128),choose(obj_EnemyJump, obj_EnemyFly));
+    spawnx = view_xview[0]+64 + random(view_wview[0]-128);
+    spawny = view_yview[0] - random(128);
+    while(collision_rectangle(spawnx-4,spawny-4,spawnx+4,spawny+4,obj_Collision,false,true) &amp;&amp; spawny &gt; 0){
+        spawny--;
+    }
+    instance_create(spawnx,spawny,choose(obj_EnemyJump, obj_EnemyFly));
 }
 if(global.level &lt; 12){
     alarm[0] = 120 - (global.level * 8);

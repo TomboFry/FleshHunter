@@ -31,6 +31,7 @@ text[2] = "Grenades";
 text[3] = "Laser Gun";
 
 select = 0;
+selectprev = 0;
 
 selected = false;
 </string>
@@ -60,11 +61,16 @@ selected = false;
     {
         if(mouse_x &gt;= 28 &amp;&amp; mouse_x &lt;= 162 &amp;&amp; mouse_y &gt;= 97 + (i*22) &amp;&amp; mouse_y &lt;= 116 + (i*22)){
             select = i;
+            if(select != selectprev){
+                if global.sfx audio_play_sound(snd_MenuSelect,10,false);
+            }
+            selectprev = select;
             if(mouse_check_button_released(mb_left)){
                 if(global.weapons[i,5] == false){
                     if(global.totalFlesh &gt;= global.weapons[i,6]){
                         global.totalFlesh -= global.weapons[i,6];
                         global.weapons[i,5] = true;
+                        if global.sfx audio_play_sound(snd_Buy,10,false);
                     }
                 } else {
                     selected = true;

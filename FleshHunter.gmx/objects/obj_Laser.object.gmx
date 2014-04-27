@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>radius = 0;
 collision = false;
-audio_play_sound(snd_Laser,10,true);
+if global.sfx audio_play_sound(snd_Laser,10,true);
 </string>
           </argument>
         </arguments>
@@ -51,7 +51,7 @@ audio_play_sound(snd_Laser,10,true);
           <argument>
             <kind>1</kind>
             <string>
-audio_stop_sound(snd_Laser);
+if audio_is_playing(snd_Laser) audio_stop_sound(snd_Laser);
 </string>
           </argument>
         </arguments>
@@ -75,10 +75,11 @@ audio_stop_sound(snd_Laser);
           <argument>
             <kind>1</kind>
             <string>direction = obj_PlayerWeapon.image_angle;
-x = obj_PlayerWeapon.x;
-y = obj_PlayerWeapon.y;
+x = obj_PlayerWeapon.x+lengthdir_x(12,direction);
+y = obj_PlayerWeapon.y+lengthdir_y(12,direction) - (2*global.facing);
 radius = 0;
-collision = false; // Stupid!
+collision = false;
+obj_PlayerWeapon.shake = 1;
 while(radius &lt; 212 &amp;&amp; collision == false)
 {
     radius++;

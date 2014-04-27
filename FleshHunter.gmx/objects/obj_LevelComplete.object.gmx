@@ -100,11 +100,11 @@ text = "";
 //shadow
 draw_set_alpha(0.5*((64-yPos)/64));
 draw_set_color(c_black);
-draw_text_transformed(display_get_gui_width()/2,yPos+10,text,2,2,(yPos*4)-4);
+draw_text_transformed(display_get_gui_width()/2,yPos+14,text,2,2,(yPos*4)-4);
 
 draw_set_alpha(((64-yPos)/64));
 draw_set_color(c_white);
-draw_text_transformed(display_get_gui_width()/2,yPos+8,text,2,2,(yPos*4)-4);
+draw_text_transformed(display_get_gui_width()/2,yPos+12,text,2,2,(yPos*4)-4);
 
 draw_set_alpha(1);
 </string>

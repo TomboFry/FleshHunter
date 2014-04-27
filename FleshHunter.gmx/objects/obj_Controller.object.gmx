@@ -11,6 +11,48 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
+        <id>612</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if_variable</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>1</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -32,7 +74,7 @@ global.weapons[0,2] = 1;                 // damage per hit
 global.weapons[0,3] = snd_Weapon_Pistol; // the sound it makes
 global.weapons[0,4] = -1;                // ammunition (-1 = infinite)
 global.weapons[0,5] = true;              // whether you own it or not
-global.weapons[0,6] = 10;                // price to buy
+global.weapons[0,6] = 20;                // price to buy
 global.weapons[0,7] = 0;                 // firerate upgrades
 global.weapons[0,8] = 0;                 // damage upgrades
 global.weapons[0,9] = -1;                // ammo price
@@ -69,8 +111,8 @@ global.weapons[2,11] = -1;               // max firerate upgrade
 global.weapons[2,12] = 10;               // max damage upgrade
 
 global.weapons[3,0] = "Laser Gun";       // name of weapon
-global.weapons[3,1] = 0.6;               // firerate multiplier (0 = semi-auto)
-global.weapons[3,2] = 5;                 // damage per hit
+global.weapons[3,1] = 0;                 // firerate multiplier (0 = semi-auto)
+global.weapons[3,2] = 1.2;               // damage per hit
 global.weapons[3,3] = snd_Weapon_MachineGun;// the sound it makes
 global.weapons[3,4] = 100;               // ammunition (-1 = infinite)
 global.weapons[3,5] = false;             // whether you own it or not
@@ -84,7 +126,7 @@ global.weapons[3,12] = 10;               // max damage upgrade
 
 global.maxweapons = 3; // maxweapons =  arraycount - 1
 
-
+ammoregen = 0; // laser gun ammo regen
 </string>
           </argument>
         </arguments>
@@ -109,7 +151,73 @@ global.maxweapons = 3; // maxweapons =  arraycount - 1
 
 global.level = 0;
 
-global.totalFlesh = 0;
+// Because i name variables stupidly...
+global.flesh = 0; // The total amount of flesh you collected
+global.totalFlesh = 0; // The amount of flesh you currently have
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Timer
+
+global.secs = 0;
+global.mins = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>resetGame();
+
+global.music = true;
+global.sfx = true;
+
+global.rmPlaying = rm_MainMenu;
 </string>
           </argument>
         </arguments>
@@ -133,11 +241,61 @@ global.totalFlesh = 0;
           <argument>
             <kind>1</kind>
             <string>if(keyboard_check_pressed(vk_escape)){
-    game_end();
+    if(room == rm_Level1 || room == rm_Level2){
+        room_goto(rm_Paused);
+    } else if(room == rm_Splash || room == rm_MainMenu){
+        game_end();
+    } else if(room == rm_Shop){
+        obj_ShopTitle.step = 2;
+    } else if(room == rm_Paused){
+        obj_PauseMenu.step = 2;
+    }
 }
 
-if(keyboard_check_pressed(ord('R'))){
-    game_restart();
+if(global.weapons[3,4] &lt; 100){
+    if(ammoregen &lt; 20){
+        ammoregen++;
+    } else {
+        ammoregen = 0;
+        global.weapons[3,4]++;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(room == rm_Level1 || room == rm_Level2){
+    if(instance_number(obj_EnemyController) == 0){
+        instance_create(x,y,obj_EnemyController);
+    }
+    room_persistent = true;
+    if(!audio_is_playing(mus_Cavern) &amp;&amp; global.music){
+        audio_stop_music();
+        audio_play_music(mus_Cavern,true);
+    }
+} else if(room == rm_MainMenu){
+    if(!audio_is_playing(mus_Level2) &amp;&amp; global.music){
+        audio_stop_music();
+        audio_play_music(mus_Level2,true);
+    }
 }
 </string>
           </argument>

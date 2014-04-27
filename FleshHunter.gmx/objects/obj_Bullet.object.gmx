@@ -35,7 +35,7 @@ alpha = 1;
 
 step = 0;
 
-obj_PlayerCamera.shake += 0.5;
+obj_PlayerCamera.shake += 2;
 
 while(radius &lt; 212 &amp;&amp; collision == false)
 {

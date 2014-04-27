@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-100</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -71,7 +71,7 @@ backCol = c_black;
     if(yPos &lt; 192){
         yPos = yPos * 1.1;
     } else {
-        room_goto(rm_Level1);
+        room_goto(global.rmPlaying);
     }
 }
 
@@ -95,6 +95,10 @@ if(mouse_x &gt;= room_width-60 &amp;&amp; mouse_y &gt;= room_height-38 &amp;&amp
     }
 } else {
     backCol = c_black;
+}
+
+if(keyboard_check(vk_up)){
+    global.totalFlesh++;
 }
 </string>
           </argument>

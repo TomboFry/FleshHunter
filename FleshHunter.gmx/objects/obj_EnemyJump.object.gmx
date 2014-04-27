@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-17</depth>
   <persistent>0</persistent>
-  <parentName>self</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -62,7 +62,7 @@ image_speed = 0;
           <argument>
             <kind>1</kind>
             <string>repeat(1+irandom(3)){
-    instance_create(x-4+random(8),y-4+random(8),obj_FleshPickup);
+    instance_create(x-4+random(8),y-12+random(8),obj_FleshPickup);
 }
 </string>
           </argument>
@@ -92,7 +92,7 @@ image_speed = 0;
 } else {
     if(wait &gt; 0){
         wait--;
-        if(wait &lt; 10){
+        if(wait &lt; 15){
             image_index = 1;
         } else {
             image_index = 0;
@@ -120,12 +120,14 @@ if(vspeed &gt; 5){
     vspeed = 5;
 }
 
-if(collision_point(x,y,obj_Player,false,true)){
+if(collision_rectangle(x-2,y-2, x+2, y+2,obj_Player,false,true)){
     if(hitstep == 0){
-        obj_PlayerCamera.shake += 1;
         hitstep = 20;
-        global.hp -= 5;
-        audio_play_sound(snd_PlayerHurt,10,false);
+        if(global.dead == false){
+            obj_PlayerCamera.shake += 1;
+            global.hp -= 5;
+            if global.sfx audio_play_sound(snd_PlayerHurt,10,false);
+        }
     } else {
         hitstep--;
     }
@@ -157,7 +159,7 @@ if(hp &lt;= 0){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(other.image_index &gt;= 3 &amp;&amp; other.image_index &lt;= 8){
+            <string>if(other.image_index &gt;= 1){
     hp--;
 }
 </string>

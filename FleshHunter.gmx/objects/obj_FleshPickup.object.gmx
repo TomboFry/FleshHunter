@@ -25,9 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle = random(360);
-direction = random_range(45,105);
-vspeed = -random_range(2,3.5);
+            <string>image_angle = random_range(45,105);
+direction = obj_Player.angle + random_range(-20,20);
+speed = random_range(2,3.5);
 </string>
           </argument>
         </arguments>
@@ -51,10 +51,14 @@ vspeed = -random_range(2,3.5);
           <argument>
             <kind>1</kind>
             <string>if(place_free(x,y+1)){
-    gravity = 0.3;
+    gravity = 0.15;
     gravity_direction = 270;
 } else {
     gravity = 0;
+    friction = 0.1;
+}
+if(distance_to_object(obj_Player) &lt; 32){
+    move_towards_point(obj_Player.x,obj_Player.y-8,(32-distance_to_object(obj_Player))/8);
 }
 </string>
           </argument>
@@ -80,6 +84,8 @@ vspeed = -random_range(2,3.5);
             <kind>1</kind>
             <string>move_contact_solid(direction,12);
 vspeed = 0;
+speed = 0;
+friction = 0.1;
 </string>
           </argument>
         </arguments>

@@ -213,3 +213,6 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+FleshHunter.gmx/sprites/images/*
+FleshHunter.gmx/background/images/*
