@@ -139,6 +139,8 @@ draw_set_alpha(((192-yPos)/192));
 draw_set_color(c_white);
 draw_text_transformed(room_width/2,yPos+1 + (sinouty*4),text,5,5,(yPos/2)-0.5+(sinout*3));
 
+draw_text(room_width/2,room_height-32+(yPos/4),"Created by Tom Gardiner / TomboFry#youtube.com/tombofry");
+
 // Rectangle
 draw_set_alpha(((yPos-1)/192));
 draw_set_color(c_black);

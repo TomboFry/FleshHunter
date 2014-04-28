@@ -30,8 +30,8 @@
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
-    <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="bg_Inferno_A" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="bg_Inferno_B" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -51,7 +51,7 @@
   </views>
   <instances>
     <instance objName="obj_Door" x="368" y="176" name="inst_23B4934C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Player" x="328" y="168" name="inst_79E2E262" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Collision" x="112" y="184" name="inst_98FCB20C" locked="0" code="" scaleX="39" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="obj_Collision" x="0" y="0" name="inst_AE13F625" locked="0" code="" scaleX="7" scaleY="54" colour="4294967295" rotation="0"/>
     <instance objName="obj_Collision" x="56" y="0" name="inst_110981FF" locked="0" code="" scaleX="1" scaleY="35" colour="4294967295" rotation="0"/>
     <instance objName="obj_Collision" x="64" y="104" name="inst_8F3158A8" locked="0" code="" scaleX="1" scaleY="20" colour="4294967295" rotation="0"/>
@@ -60,13 +60,13 @@
     <instance objName="obj_Collision" x="80" y="152" name="inst_49D7337D" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="obj_Collision" x="96" y="168" name="inst_CC3CBB5C" locked="0" code="" scaleX="2" scaleY="7" colour="4294967295" rotation="0"/>
     <instance objName="obj_Collision" x="112" y="176" name="inst_89BBE794" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Collision" x="112" y="184" name="inst_AEDE0B74" locked="0" code="" scaleX="39" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Collision" x="472" y="256" name="inst_19953310" locked="0" code="" scaleX="2" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="obj_Collision" x="112" y="216" name="inst_5E6957F1" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Collision" x="120" y="224" name="inst_2F9C8D00" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Collision" x="176" y="176" name="inst_52DE6B02" locked="0" code="" scaleX="29" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Collision" x="456" y="272" name="inst_50F4F012" locked="0" code="" scaleX="2" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="obj_Collision" x="208" y="168" name="inst_450CA1A4" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Collision" x="256" y="144" name="inst_079C8885" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Collision" x="384" y="168" name="inst_9E662B98" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Collision" x="464" y="264" name="inst_2B94C9DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Collision" x="536" y="0" name="inst_A9ACAAC4" locked="0" code="" scaleX="13" scaleY="38" colour="4294967295" rotation="0"/>
     <instance objName="obj_Collision" x="528" y="216" name="inst_DEF3B9B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Collision" x="520" y="224" name="inst_305EB3E8" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
@@ -102,9 +102,9 @@
     <instance objName="obj_Collision" x="408" y="312" name="inst_C92EA0DF" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Collision" x="488" y="240" name="inst_C53E525F" locked="0" code="" scaleX="6" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="obj_Collision" x="480" y="248" name="inst_7569A61E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Collision" x="472" y="256" name="inst_19953310" locked="0" code="" scaleX="2" scaleY="8" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Collision" x="464" y="264" name="inst_2B94C9DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Collision" x="456" y="272" name="inst_50F4F012" locked="0" code="" scaleX="2" scaleY="6" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Collision" x="176" y="176" name="inst_3C3DE788" locked="0" code="" scaleX="29" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Collision" x="384" y="168" name="inst_17E7E34D" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Player" x="304" y="168" name="inst_80C6D6FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_Inferno" x="56" y="32" w="8" h="8" xo="8" yo="0" id="10005100" name="inst_9E5D3F60" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -444,7 +444,6 @@
     <tile bgName="bg_Inferno" x="400" y="192" w="8" h="8" xo="8" yo="0" id="10005599" name="inst_17F895ED" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_Inferno" x="392" y="192" w="8" h="8" xo="8" yo="0" id="10005600" name="inst_8B6D5CA5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_Inferno" x="384" y="192" w="8" h="8" xo="8" yo="0" id="10005601" name="inst_E17A92BF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bg_Inferno" x="376" y="192" w="8" h="8" xo="8" yo="0" id="10005602" name="inst_D102111B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_Inferno" x="368" y="192" w="8" h="8" xo="8" yo="0" id="10005603" name="inst_EBDC014A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_Inferno" x="360" y="192" w="8" h="8" xo="8" yo="0" id="10005604" name="inst_19AEE520" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_Inferno" x="352" y="192" w="8" h="8" xo="8" yo="0" id="10005605" name="inst_46179D97" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -488,7 +487,6 @@
     <tile bgName="bg_Inferno" x="336" y="184" w="8" h="8" xo="8" yo="0" id="10005643" name="inst_022BEE57" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_Inferno" x="344" y="184" w="8" h="8" xo="8" yo="0" id="10005644" name="inst_BA236C73" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_Inferno" x="352" y="184" w="8" h="8" xo="8" yo="0" id="10005645" name="inst_CD557A6D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bg_Inferno" x="360" y="184" w="8" h="8" xo="8" yo="0" id="10005646" name="inst_1D67844D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_Inferno" x="368" y="184" w="8" h="8" xo="8" yo="0" id="10005647" name="inst_B8B2B451" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_Inferno" x="376" y="184" w="8" h="8" xo="8" yo="0" id="10005648" name="inst_4E483D17" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_Inferno" x="384" y="184" w="8" h="8" xo="8" yo="0" id="10005649" name="inst_2C853C3C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -2006,10 +2004,6 @@
     <tile bgName="bg_Inferno" x="328" y="176" w="8" h="8" xo="0" yo="0" id="10007809" name="inst_34247E8C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_Inferno" x="336" y="176" w="8" h="8" xo="0" yo="0" id="10007810" name="inst_3B94A587" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_Inferno" x="344" y="176" w="8" h="8" xo="0" yo="0" id="10007811" name="inst_64848F0D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bg_Inferno" x="352" y="176" w="8" h="8" xo="0" yo="0" id="10007812" name="inst_B6E6E55B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bg_Inferno" x="360" y="176" w="8" h="8" xo="0" yo="0" id="10007813" name="inst_5EA93312" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bg_Inferno" x="368" y="176" w="8" h="8" xo="0" yo="0" id="10007814" name="inst_CCC54707" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bg_Inferno" x="376" y="176" w="8" h="8" xo="0" yo="0" id="10007815" name="inst_06E04D23" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_Inferno" x="384" y="168" w="8" h="8" xo="0" yo="0" id="10007816" name="inst_E62DC14E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_Inferno" x="392" y="168" w="8" h="8" xo="0" yo="0" id="10007817" name="inst_A86A7A0D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_Inferno" x="400" y="176" w="8" h="8" xo="0" yo="0" id="10007818" name="inst_41BDE51D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -2183,6 +2177,12 @@
     <tile bgName="bg_Inferno" x="240" y="168" w="8" h="8" xo="32" yo="0" id="10008047" name="inst_1FCBA31A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_Inferno" x="456" y="216" w="8" h="8" xo="16" yo="0" id="10008048" name="inst_654FE1AE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_Inferno" x="464" y="208" w="8" h="8" xo="32" yo="0" id="10008049" name="inst_41257EB6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_Tileset" x="360" y="176" w="8" h="8" xo="56" yo="16" id="10008050" name="inst_5124AA9A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_Tileset" x="368" y="176" w="8" h="8" xo="56" yo="16" id="10008051" name="inst_799728DB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_Tileset" x="352" y="176" w="8" h="8" xo="56" yo="16" id="10008052" name="inst_2B483C04" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_Tileset" x="376" y="176" w="8" h="8" xo="56" yo="16" id="10008053" name="inst_F494E6E1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_Tileset" x="360" y="184" w="8" h="8" xo="0" yo="16" id="10008054" name="inst_54D0CF70" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_Tileset" x="376" y="192" w="8" h="8" xo="32" yo="24" id="10008056" name="inst_22C06BB9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

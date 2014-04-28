@@ -71,8 +71,10 @@ if(!global.dead){
     y = lerp(obj_Player.y,mouse_y,0.25) - 8;
     
     
-    background_x[0] = view_xview[0] / 10;
-    background_y[0] = view_yview[0] / 10;
+    background_x[0] = view_xview[0] / 3;
+    background_y[0] = view_yview[0] / 3;
+    background_x[1] = view_xview[0] / 8;
+    background_y[1] = view_yview[0] / 8;
 }
 </string>
           </argument>

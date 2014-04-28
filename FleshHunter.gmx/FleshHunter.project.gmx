@@ -41,8 +41,11 @@
       <sprite>sprites\spr_Tick</sprite>
       <sprite>sprites\spr_Laser</sprite>
       <sprite>sprites\spr_Grenade</sprite>
-      <sprite>sprites\spr_Explosion</sprite>
       <sprite>sprites\spr_Explosion2</sprite>
+    </sprites>
+    <sprites name="Menu">
+      <sprite>sprites\spr_CavernPreview</sprite>
+      <sprite>sprites\spr_InfernoPreview</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -50,10 +53,13 @@
     <background>background\bg_DirtBG</background>
     <background>background\bg_ShopBG</background>
     <background>background\bg_ShopBG_Walls</background>
+    <background>background\bg_ShopBG_Walls_Inferno</background>
     <background>background\bg_VinesTileset</background>
-    <background>background\bg_Splash</background>
     <background>background\bg_HowToPlay</background>
     <background>background\bg_Inferno</background>
+    <background>background\bg_InfernoShopBG</background>
+    <background>background\bg_Inferno_A</background>
+    <background>background\bg_Inferno_B</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">

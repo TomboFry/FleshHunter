@@ -128,16 +128,15 @@ for(i = 0; i &lt; 3; i++)
         draw_set_color(make_color_rgb(217,224,33));
         draw_rectangle(28, 69 + (i*22) + yPos, 135, 88 + (i*22) + yPos,false);
         draw_set_color(c_black);
-        draw_rectangle(135, 69 + (i*22) + yPos, 163, 88 + (i*22) + yPos,false);
     } else {
         draw_set_color(c_white);
     }
     draw_set_halign(fa_left);
     draw_text_transformed(32, 68 + (i*22) + yPos, text[i],2,2,0);
-    draw_sprite(spr_Tick,0,143,73 + (i*22) + yPos);
 }
 
 draw_set_color(c_white);
+draw_set_halign(fa_center);
 draw_text_transformed(room_width/2,yPos+1,title,5,5,(yPos/2)-0.5);
 
 draw_sprite_ext(spr_Cursor,0,mouse_x,mouse_y,2,2,0,-1,1);
