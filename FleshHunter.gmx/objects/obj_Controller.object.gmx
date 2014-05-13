@@ -214,8 +214,7 @@ global.mins = 0;
             <kind>1</kind>
             <string>resetGame();
 
-global.music = true;
-global.sfx = true;
+loadSettings();
 
 global.rmPlaying = rm_MainMenu;
 </string>

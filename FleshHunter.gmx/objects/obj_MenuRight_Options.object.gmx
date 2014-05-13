@@ -77,6 +77,7 @@ step = 0;
         xPos = xPos * 1.25;
     } else {
         xPos = 64;
+        saveSettings();
         obj_MainMenuLeft.selected = false;
         instance_destroy();
     }

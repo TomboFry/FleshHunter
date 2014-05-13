@@ -47,7 +47,7 @@ global.weapons[3,2] = 1.2;               // damage per hit
 global.weapons[3,3] = snd_Weapon_MachineGun;// the sound it makes
 global.weapons[3,4] = 100;               // ammunition (-1 = infinite)
 global.weapons[3,5] = false;             // whether you own it or not
-global.weapons[3,6] = 250;               // price to buy
+global.weapons[3,6] = 150;               // price to buy
 global.weapons[3,7] = -1;                // firerate upgrades
 global.weapons[3,8] = 0;                 // damage upgrades
 global.weapons[3,9] = -1;                // ammo price

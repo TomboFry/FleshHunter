@@ -34,6 +34,12 @@
     <option_android_icon_36>Configs\Default\android\icons\icon36.png</option_android_icon_36>
     <option_android_icon_48>Configs\Default\android\icons\icon48.png</option_android_icon_48>
     <option_android_icon_72>Configs\Default\android\icons\icon72.png</option_android_icon_72>
+    <option_android_icon_hdpi>Configs\Default\android\icons\icon_hdpi.png</option_android_icon_hdpi>
+    <option_android_icon_ldpi>Configs\Default\android\icons\icon_ldpi.png</option_android_icon_ldpi>
+    <option_android_icon_mdpi>Configs\Default\android\icons\icon_mdpi.png</option_android_icon_mdpi>
+    <option_android_icon_xhdpi>Configs\Default\android\icons\icon_xhdpi.png</option_android_icon_xhdpi>
+    <option_android_icon_xxhdpi>Configs\Default\android\icons\icon_xxhdpi.png</option_android_icon_xxhdpi>
+    <option_android_icon_xxxhdpi>Configs\Default\android\icons\icon_xxxhdpi.png</option_android_icon_xxxhdpi>
     <option_android_install_location>auto</option_android_install_location>
     <option_android_interpolate>-1</option_android_interpolate>
     <option_android_licensing_enable>0</option_android_licensing_enable>
@@ -195,6 +201,17 @@
     <option_noscreensaver>true</option_noscreensaver>
     <option_ouya_packaging>0</option_ouya_packaging>
     <option_priority>0</option_priority>
+    <option_ps4_interpolate>-1</option_ps4_interpolate>
+    <option_ps4_nptitleid></option_ps4_nptitleid>
+    <option_ps4_nptitlesecret>Memo1
+</option_ps4_nptitlesecret>
+    <option_ps4_package_id></option_ps4_package_id>
+    <option_ps4_passcode></option_ps4_passcode>
+    <option_ps4_scale>0</option_ps4_scale>
+    <option_ps4_texture_page>2048</option_ps4_texture_page>
+    <option_psvita_interpolation>true</option_psvita_interpolation>
+    <option_psvita_package_id>EP9000-NPXB01693_00-GMSTUDIORUNNER00</option_psvita_package_id>
+    <option_psvita_passcode>5MHZUpPpbQLKAkttvpJzA6EaWgsiWv1w</option_psvita_passcode>
     <option_quitkey>true</option_quitkey>
     <option_resolution>0</option_resolution>
     <option_savekey>true</option_savekey>
@@ -207,7 +224,7 @@
     <option_showprogress>1</option_showprogress>
     <option_sizeable>False</option_sizeable>
     <option_stayontop>false</option_stayontop>
-    <option_sync_vertex>0</option_sync_vertex>
+    <option_sync_vertex>1</option_sync_vertex>
     <option_textureGroup0_border>2</option_textureGroup0_border>
     <option_textureGroup0_nocropping>0</option_textureGroup0_nocropping>
     <option_textureGroup0_parent>&lt;none&gt;</option_textureGroup0_parent>
@@ -244,7 +261,7 @@
     <option_version_major>1</option_version_major>
     <option_version_minor>0</option_version_minor>
     <option_version_product>Flesh Hunter</option_version_product>
-    <option_version_release>0</option_version_release>
+    <option_version_release>1</option_version_release>
     <option_win8_advertising_appid></option_win8_advertising_appid>
     <option_win8_advertising_enable>0</option_win8_advertising_enable>
     <option_win8_advertising_key></option_win8_advertising_key>
@@ -292,7 +309,7 @@
     <option_windows_major_version>1</option_windows_major_version>
     <option_windows_nsis_file>Configs\Default\windows\RunnerInstaller.nsi</option_windows_nsis_file>
     <option_windows_product_info>Flesh Hunter</option_windows_product_info>
-    <option_windows_release_version>0</option_windows_release_version>
+    <option_windows_release_version>1</option_windows_release_version>
     <option_windows_runner_finished>Configs\Default\windows\Runner_finish.bmp</option_windows_runner_finished>
     <option_windows_runner_header>Configs\Default\windows\Runner_header.bmp</option_windows_runner_header>
     <option_windows_save_location>0</option_windows_save_location>
@@ -358,6 +375,20 @@
     <option_winphone_texture_page>1024</option_winphone_texture_page>
     <option_winphone_tile_type>0</option_winphone_tile_type>
     <option_writeerrors>False</option_writeerrors>
+    <option_xbone_background_colour>#464646</option_xbone_background_colour>
+    <option_xbone_build_version>0</option_xbone_build_version>
+    <option_xbone_description>Your Description</option_xbone_description>
+    <option_xbone_display_name>FleshHunter</option_xbone_display_name>
+    <option_xbone_foreground_text>light</option_xbone_foreground_text>
+    <option_xbone_interpolation>true</option_xbone_interpolation>
+    <option_xbone_major_version>1</option_xbone_major_version>
+    <option_xbone_minor_version>0</option_xbone_minor_version>
+    <option_xbone_publisher>Company Name</option_xbone_publisher>
+    <option_xbone_publisher_display_name>Company Display Name</option_xbone_publisher_display_name>
+    <option_xbone_revision_version>0</option_xbone_revision_version>
+    <option_xbone_scale>-1</option_xbone_scale>
+    <option_xbone_splash_screen_colour>#464646</option_xbone_splash_screen_colour>
+    <option_xbone_texture_page>1024</option_xbone_texture_page>
   </Options>
   <ConfigConstants/>
 </Config>

@@ -40,6 +40,7 @@ angle = point_direction(x,y-4,mouse_x,mouse_y);
 
 instance_create(x,y,obj_PlayerCamera);
 instance_create(x,y,obj_PlayerWeapon);
+instance_create(x,y,obj_PlayerFollow);
 
 image_speed = 0;
 </string>
@@ -108,6 +109,11 @@ image_speed = 0;
             <kind>1</kind>
             <string>/// Movement
 moving = false;
+if(keyboard_check(vk_shift)){
+    global.mspeed = 1.85;
+} else {
+    global.mspeed = 1.25;
+}
 if(keyboard_check(ord('A')) &amp;&amp; place_free(x-global.mspeed,y)){
     x -= global.mspeed;
     moving = true;

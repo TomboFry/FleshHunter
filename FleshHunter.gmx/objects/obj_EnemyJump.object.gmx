@@ -116,8 +116,8 @@ if(place_free(x,y+1)){
     gravity = 0;
 }
 
-if(vspeed &gt; 5){
-    vspeed = 5;
+if(vspeed &gt; 3){
+    vspeed = 3;
 }
 
 if(collision_rectangle(x-2,y-2, x+2, y+2,obj_Player,false,true)){

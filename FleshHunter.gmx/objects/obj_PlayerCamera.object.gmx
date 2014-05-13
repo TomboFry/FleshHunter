@@ -67,8 +67,8 @@ posy = 0;
             <kind>1</kind>
             <string>/// Movement
 if(!global.dead){
-    x = lerp(obj_Player.x,mouse_x,0.25);
-    y = lerp(obj_Player.y,mouse_y,0.25) - 8;
+    x = lerp(obj_PlayerFollow.x,mouse_x,0.25);
+    y = lerp(obj_PlayerFollow.y,mouse_y,0.4) - 8;
     
     
     background_x[0] = view_xview[0] / 3;
